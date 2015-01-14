@@ -1,0 +1,160 @@
+html,
+body {
+  font-family: "Courier";
+  font-size: 18px;
+}
+
+body {
+  background-color: #38393c;
+  color: #aaaaaa;
+}
+
+a {
+  color: #aaaaaa;
+  text-decoration: none;
+  border-bottom: 1px dashed #888;
+
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+a:hover,
+a:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+code,
+pre {
+  background-color: #333333;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  color: #91c854;
+}
+
+pre code {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffffff;
+}
+
+.container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.indentation-container {
+  position: relative;
+}
+
+.indentation {
+  position: absolute;
+  top: 30px;
+  bottom: 25px;
+  width: 40px;
+  display: none;
+}
+
+.indentation-line {
+  border-right: 1px dashed #888;
+  height: 100%;
+  margin-right:20px;
+}
+
+.indentation-ellipsis {
+  display: none;
+}
+
+.indentation-toggle {
+  color: #ffffff;
+
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.indentation-toggle:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.indentation-toggle:hover > .indentation-line {
+  border-color: #ffffff;
+}
+
+.indentation-content {
+  display: block;
+
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.indentation-container.collapsed .indentation-content {
+  display: none;
+}
+
+.indentation-container.collapsed .indentation-ellipsis {
+  display: inline-block;
+}
+
+.array-item:last-child > .control:last-child {
+  display: none;
+}
+
+.control {
+  color: #ffffff;
+  display: block;
+}
+
+.control.inline {
+  display: inline;
+}
+
+.attribute {
+  color: #91c854;
+}
+
+.value {
+  color: #aaaaaa;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .indentation {
+    display: block;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
