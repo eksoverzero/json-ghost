@@ -1,80 +1,183 @@
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
-{{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
-<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-        <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
-        <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
-    </nav>
-</header>
+<div class="indentation-container">
+  <span class="attribute">"post"</span>
+  <span class="control inline">:</span>
+  <span class="control inline">{</span>
+  <div class="row indentation-content">
+    <div class="indentation indentation-toggle">
+      <div class="indentation-line"></div>
+    </div>
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 
-<main class="content" role="main">
 
-    <article class="{{post_class}}">
+      {{#if image}}
+      <div>
+        <span class="attribute">"cover"</span>
+        <span class="control inline">:</span>
+        <span class="value">
+          <img src="{{image}}" />
+        </span>
+        <span class="control inline">,</span>
+      </div>
+      {{/if}}
 
-        <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-            <section class="post-meta">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
-            </section>
-        </header>
+      <div>
+        <span class="attribute">"title"</span>
+        <span class="control inline">:</span>
+        <span class="value">"{{title}}"</span>
+        <span class="control inline">,</span>
+      </div>
 
-        <section class="post-content">
+      <div>
+        <span class="attribute">"date"</span>
+        <span class="control inline">:</span>
+        <span class="value" datetime="{{date format='YYYY-MM-DD'}}">"{{date format='DD MMMM YYYY'}}"</span>
+        <span class="control inline">,</span>
+      </div>
+
+      <div class="indentation-container">
+        <span class="attribute">"tags"</span>
+        <span class="control inline">:</span>
+        <span class="control inline">[</span>
+        <div class="row indentation-content">
+          <div class="indentation indentation-toggle">
+            <div class="indentation-line"></div>
+          </div>
+          <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+
+            {{#foreach tags}}
+            <div class="array-item">
+              <span class="value">"<a href="{{url}}">{{name}}</a>"</span>
+              <span class="control inline">,</span>
+            </div>
+            {{/foreach}}
+
+          </div>
+        </div>
+        <span class="indentation-ellipsis indentation-toggle">...</span>
+        <span class="control inline">]</span>
+        <span class="control inline">,</span>
+      </div>
+
+      <div class="indentation-container">
+        <span class="attribute">"content"</span>
+        <span class="control inline">:</span>
+        <span class="value">"</span>
+        <div class="row indentation-content">
+          <div class="indentation indentation-toggle">
+            <div class="indentation-line"></div>
+          </div>
+          <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
             {{content}}
-        </section>
+          </div>
+        </div>
+        <span class="indentation-ellipsis indentation-toggle">...</span>
+        <span class="value">"</span>
+        <span class="control inline">,</span>
+      </div>
 
-        <footer class="post-footer">
+      {{#author}}
+      <div class="indentation-container">
+        <span class="attribute">"author"</span>
+        <span class="control inline">:</span>
+        <span class="control inline">{</span>
+        <div class="row indentation-content">
+          <div class="indentation indentation-toggle">
+            <div class="indentation-line"></div>
+          </div>
+          <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 
-        {{! Everything inside the #author tags pulls data from the author }}
-        {{#author}}
+            <div class="array-item">
+              <span class="attribute">"name"</span>
+              <span class="control inline">:</span>
+              <span class="value">"<a href="{{url}}">{{name}}</a>"</span>
+              <span class="control inline">,</span>
+            </div>
 
-            {{#if image}}
-            <figure class="author-image">
-                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
-            </figure>
+            {{#if bio}}
+            <div class="array-item indentation-container">
+              <span class="attribute">"bio"</span>
+              <span class="control inline">:</span>
+              <span class="value">"</span>
+              <div class="row indentation-content">
+                <div class="indentation indentation-toggle">
+                  <div class="indentation-line"></div>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+                  {{bio}}
+                </div>
+              </div>
+              <span class="indentation-ellipsis indentation-toggle">...</span>
+              <span class="value">"</span>
+              <span class="control inline">,</span>
+            </div>
             {{/if}}
 
-            <section class="author">
-                <h4><a href="{{url}}">{{name}}</a></h4>
+            {{#if location}}
+            <div class="array-item">
+              <span class="attribute">"location"</span>
+              <span class="control inline">:</span>
+              <span class="value">"{{location}}"</span>
+              <span class="control inline">,</span>
+            </div>
+            {{/if}}
 
-                {{#if bio}}
-                    <p>{{bio}}</p>
-                {{else}}
-                    <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                {{/if}}
-                <div class="author-meta">
-                    {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-                    {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-                </div>
-            </section>
+            {{#if website}}
+            <div class="array-item">
+              <span class="attribute">"website"</span>
+              <span class="control inline">:</span>
+              <span class="value">"<a href="{{website}}">{{website}}</a>"</span>
+              <span class="control inline">,</span>
+            </div>
+            {{/if}}
 
-        {{/author}}
+          </div>
+        </div>
+        <span class="indentation-ellipsis indentation-toggle">...</span>
+        <span class="control inline">}</span>
+        <span class="control inline">,</span>
+      </div>
+      {{/author}}
 
-            <section class="share">
-                <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
-                </a>
-            </section>
+      <div class="indentation-container">
+        <span class="attribute">"share_on"</span>
+        <span class="control inline">:</span>
+        <span class="control inline">[</span>
+        <div class="row indentation-content">
+          <div class="indentation indentation-toggle">
+            <div class="indentation-line"></div>
+          </div>
+          <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 
-        </footer>
+            <div>
+              <span class="value">"<a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">twitter</a>"</span>
+              <span class="control inline">,</span>
+            </div>
 
-    </article>
+            <div>
+              <span class="value">"<a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">facebook</a>"</span>
+              <span class="control inline">,</span>
+            </div>
 
-</main>
+            <div>
+              <span class="value">"<a href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">google+</a>"</span>
+            </div>
+
+          </div>
+        </div>
+        <span class="indentation-ellipsis indentation-toggle">...</span>
+        <span class="control inline">]</span>
+        <span class="control inline">,</span>
+      </div>
+
+    </div>
+  </div>
+  <span class="indentation-ellipsis indentation-toggle">...</span>
+  <span class="control inline">}</span>
+  <span class="control inline">,</span>
+</div>
 
 {{/post}}

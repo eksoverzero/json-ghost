@@ -1,24 +1,49 @@
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-{{! The big featured header }}
-<header class="main-header tag-head {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav overlay clearfix">
-        <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
-        <a class="subscribe-button icon-feed" href="{{@blog.url}}/tag/{{tag.slug}}/rss/">{{tag.name}}</a>
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">{{tag.name}}</h1>
-            <h2 class="page-description">A {{pagination.total}}-post collection</h2>
-        </div>
+<div class="indentation-container">
+  <span class="attribute">"tag"</span>
+  <span class="control inline">:</span>
+  <span class="control inline">{</span>
+  <div class="row indentation-content">
+    <div class="indentation indentation-toggle">
+      <div class="indentation-line"></div>
     </div>
-</header>
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 
-{{! The main content area on the homepage }}
-<main class="content" role="main">
+      <div>
+        <span class="attribute">"name"</span>
+        <span class="control inline">:</span>
+        <span class="value">"<a href="{{@blog.url}}/tag/{{tag.slug}}/rss/">{{tag.name}}</a>"</span>
+        <span class="control inline">,</span>
+      </div>
 
-    {{! The tag below includes the post loop - partials/loop.hbs }}
-    {{> "loop"}}
+      <div>
+        <span class="attribute">"description"</span>
+        <span class="control inline">:</span>
+        <span class="value">"All, {{pagination.total}}, posts tagged with '{{tag.name}}'"</span>
+        <span class="control inline">,</span>
+      </div>
 
-</main>
+      <div class="indentation-container">
+        <span class="attribute">"posts"</span>
+        <span class="control inline">:</span>
+        <span class="control inline">[</span>
+        <div class="row indentation-content">
+          <div class="indentation indentation-toggle">
+            <div class="indentation-line"></div>
+          </div>
+          <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+            {{> "post"}}
+          </div>
+        </div>
+        <span class="indentation-ellipsis indentation-toggle">...</span>
+        <span class="control inline">]</span>
+        <span class="control inline">,</span>
+      </div>
+
+    </div>
+  </div>
+  <span class="indentation-ellipsis indentation-toggle">...</span>
+  <span class="control inline">}</span>
+  <span class="control inline">,</span>
+</div>

@@ -1,32 +1,57 @@
 {{!< default}}
 
-{{! This is a page template. A page outputs content just like any other post, and has all the same
-    attributes by default, but you can also customise it to behave differently if you prefer. }}
-
-{{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
 
-<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-        <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
-        <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
-    </nav>
-</header>
+<div class="indentation-container">
+  <span class="attribute">"page"</span>
+  <span class="control inline">:</span>
+  <span class="control inline">{</span>
+  <div class="row indentation-content">
+    <div class="indentation indentation-toggle">
+      <div class="indentation-line"></div>
+    </div>
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 
-<main class="content" role="main">
+      {{#if image}}
+      <div>
+        <span class="attribute">"cover"</span>
+        <span class="control inline">:</span>
+        <span class="value">
+          <img src="{{image}}" />
+        </span>
+        <span class="control inline">,</span>
+      </div>
+      {{/if}}
 
-    <article class="{{post_class}}">
-    {{! Everything inside the #post tags pulls data from the post }}
+      <div>
+        <span class="attribute">"title"</span>
+        <span class="control inline">:</span>
+        <span class="value">"{{title}}"</span>
+        <span class="control inline">,</span>
+      </div>
 
-        <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-        </header>
-
-        <section class="post-content">
+      <div class="indentation-container">
+        <span class="attribute">"content"</span>
+        <span class="control inline">:</span>
+        <span class="value">"</span>
+        <div class="row indentation-content">
+          <div class="indentation indentation-toggle">
+            <div class="indentation-line"></div>
+          </div>
+          <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
             {{content}}
-        </section>
+          </div>
+        </div>
+        <span class="indentation-ellipsis indentation-toggle">...</span>
+        <span class="value">"</span>
+        <span class="control inline">,</span>
+      </div>
 
-    </article>
+    </div>
+  </div>
+  <span class="indentation-ellipsis indentation-toggle">...</span>
+  <span class="control inline">}</span>
+  <span class="control inline">,</span>
+</div>
 
-</main>
 {{/post}}

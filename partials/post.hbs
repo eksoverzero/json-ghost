@@ -1,0 +1,49 @@
+{{! This is the post loop - each post will be output using this markup }}
+
+{{#foreach posts}}
+<div class="array-item indentation-container">
+  <span class="control inline">{</span>
+  <div class="row indentation-content">
+    <div class="indentation indentation-toggle">
+      <div class="indentation-line"></div>
+    </div>
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+
+      <div>
+        <span class="attribute">"title"</span>
+        <span class="control inline">:</span>
+        <span class="value">"<a href="{{url}}">{{title}}</a>"</span>
+        <span class="control inline">,</span>
+      </div>
+
+      <div>
+        <span class="attribute">"excerpt"</span>
+        <span class="control inline">:</span>
+        <span class="value">"{{excerpt words="26"}}"</span>
+        <span class="control inline">,</span>
+      </div>
+
+      <div>
+        <span class="attribute">"author"</span>
+        <span class="control inline">:</span>
+        <span class="value">"{{author}}"</span>
+        <span class="control inline">,</span>
+      </div>
+
+      <div>
+        <span class="attribute">"date"</span>
+        <span class="control inline">:</span>
+        <span class="value" datetime="{{date format='YYYY-MM-DD'}}">"{{date format='YYYY-MM-DD'}}"</span>
+        <span class="control inline">,</span>
+      </div>
+
+    </div>
+  </div>
+  <span class="indentation-ellipsis indentation-toggle">...</span>
+  <span class="control inline">}</span>
+  <span class="control inline">,</span>
+</div>
+{{/foreach}}
+
+{{! Previous/next page links - displayed on every page }}
+{{! pagination}}
