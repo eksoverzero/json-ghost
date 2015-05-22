@@ -1,6 +1,6 @@
 # JSON
 
-![Index](https://github.com/secondimpression/json-ghost/raw/master/doc/images/index.jpg)
+![Index](https://github.com/secondimpression/json-ghost/raw/master/doc/images/post.jpg)
 
 To download, visit the [releases](https://github.com/secondimpression/json-ghost/releases) page.
 
