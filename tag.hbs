@@ -1,8 +1,7 @@
 {{!< default}}
 
 <div class="indentation-container">
-  <span class="attribute">"tag"</span>
-  <span class="control inline">:</span>
+  <span class="attribute">"tag"</span><span class="control inline">:</span>
   <span class="control inline">{</span>
   <div class="row indentation-content">
     <div class="indentation indentation-toggle">
@@ -11,22 +10,17 @@
     <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 
       <div>
-        <span class="attribute">"name"</span>
-        <span class="control inline">:</span>
-        <span class="value">"<a href="{{@blog.url}}/tag/{{tag.slug}}/rss/">{{tag.name}}</a>"</span>
-        <span class="control inline">,</span>
+        <span class="attribute">"name"</span><span class="control inline">:</span>
+        <span class="value">"<a href="{{@blog.url}}/tag/{{tag.slug}}/rss/">{{tag.name}}</a>"</span><span class="control inline">,</span>
       </div>
 
       <div>
-        <span class="attribute">"description"</span>
-        <span class="control inline">:</span>
-        <span class="value">"All, {{pagination.total}}, posts tagged with '{{tag.name}}'"</span>
-        <span class="control inline">,</span>
+        <span class="attribute">"description"</span><span class="control inline">:</span>
+        <span class="value">"All, {{pagination.total}}, posts tagged with '{{tag.name}}'"</span><span class="control inline">,</span>
       </div>
 
       <div class="indentation-container">
-        <span class="attribute">"posts"</span>
-        <span class="control inline">:</span>
+        <span class="attribute">"posts"</span><span class="control inline">:</span>
         <span class="control inline">[</span>
         <div class="row indentation-content">
           <div class="indentation indentation-toggle">
@@ -37,13 +31,11 @@
           </div>
         </div>
         <span class="indentation-ellipsis indentation-toggle">...</span>
-        <span class="control inline">]</span>
-        <span class="control inline">,</span>
+        <span class="control inline">]</span><span class="control inline">,</span>
       </div>
 
     </div>
   </div>
   <span class="indentation-ellipsis indentation-toggle">...</span>
-  <span class="control inline">}</span>
-  <span class="control inline">,</span>
+  <span class="control inline">}</span><span class="control inline">,</span>
 </div>

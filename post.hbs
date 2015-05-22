@@ -3,8 +3,7 @@
 {{#post}}
 
 <div class="indentation-container">
-  <span class="attribute">"post"</span>
-  <span class="control inline">:</span>
+  <span class="attribute">"post"</span><span class="control inline">:</span>
   <span class="control inline">{</span>
   <div class="row indentation-content">
     <div class="indentation indentation-toggle">
@@ -12,7 +11,7 @@
     </div>
     <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 
-
+      <!--
       {{#if image}}
       <div>
         <span class="attribute">"cover"</span>
@@ -23,24 +22,35 @@
         <span class="control inline">,</span>
       </div>
       {{/if}}
+      -->
 
       <div>
-        <span class="attribute">"title"</span>
-        <span class="control inline">:</span>
-        <span class="value">"{{title}}"</span>
-        <span class="control inline">,</span>
+        <span class="attribute">"title"</span><span class="control inline">:</span>
+        <span class="value">"{{title}}"</span><span class="control inline">,</span>
       </div>
 
       <div>
-        <span class="attribute">"date"</span>
-        <span class="control inline">:</span>
-        <span class="value" datetime="{{date format='YYYY-MM-DD'}}">"{{date format='DD MMMM YYYY'}}"</span>
-        <span class="control inline">,</span>
+        <span class="attribute">"date"</span><span class="control inline">:</span>
+        <span class="value" datetime="{{date format='YYYY-MM-DD'}}">"{{date format='DD MMMM YYYY'}}"</span><span class="control inline">,</span>
       </div>
 
       <div class="indentation-container">
-        <span class="attribute">"tags"</span>
-        <span class="control inline">:</span>
+        <span class="attribute">"content"</span><span class="control inline">:</span>
+        <span class="value">"</span>
+        <div class="row indentation-content">
+          <div class="indentation indentation-toggle">
+            <div class="indentation-line"></div>
+          </div>
+          <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+            {{content}}
+          </div>
+        </div>
+        <span class="indentation-ellipsis indentation-toggle">...</span>
+        <span class="value">"</span><span class="control inline">,</span>
+      </div>
+
+      <div class="indentation-container">
+        <span class="attribute">"tags"</span><span class="control inline">:</span>
         <span class="control inline">[</span>
         <div class="row indentation-content">
           <div class="indentation indentation-toggle">
@@ -58,31 +68,12 @@
           </div>
         </div>
         <span class="indentation-ellipsis indentation-toggle">...</span>
-        <span class="control inline">]</span>
-        <span class="control inline">,</span>
-      </div>
-
-      <div class="indentation-container">
-        <span class="attribute">"content"</span>
-        <span class="control inline">:</span>
-        <span class="value">"</span>
-        <div class="row indentation-content">
-          <div class="indentation indentation-toggle">
-            <div class="indentation-line"></div>
-          </div>
-          <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-            {{content}}
-          </div>
-        </div>
-        <span class="indentation-ellipsis indentation-toggle">...</span>
-        <span class="value">"</span>
-        <span class="control inline">,</span>
+        <span class="control inline">]</span><span class="control inline">,</span>
       </div>
 
       {{#author}}
       <div class="indentation-container">
-        <span class="attribute">"author"</span>
-        <span class="control inline">:</span>
+        <span class="attribute">"author"</span><span class="control inline">:</span>
         <span class="control inline">{</span>
         <div class="row indentation-content">
           <div class="indentation indentation-toggle">
@@ -91,10 +82,8 @@
           <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 
             <div class="array-item">
-              <span class="attribute">"name"</span>
-              <span class="control inline">:</span>
-              <span class="value">"<a href="{{url}}">{{name}}</a>"</span>
-              <span class="control inline">,</span>
+              <span class="attribute">"name"</span><span class="control inline">:</span>
+              <span class="value">"<a href="{{url}}">{{name}}</a>"</span><span class="control inline">,</span>
             </div>
 
             {{#if bio}}
@@ -111,11 +100,11 @@
                 </div>
               </div>
               <span class="indentation-ellipsis indentation-toggle">...</span>
-              <span class="value">"</span>
-              <span class="control inline">,</span>
+              <span class="value">"</span><span class="control inline">,</span>
             </div>
             {{/if}}
 
+            <!--
             {{#if location}}
             <div class="array-item">
               <span class="attribute">"location"</span>
@@ -133,18 +122,17 @@
               <span class="control inline">,</span>
             </div>
             {{/if}}
+            -->
 
           </div>
         </div>
         <span class="indentation-ellipsis indentation-toggle">...</span>
-        <span class="control inline">}</span>
-        <span class="control inline">,</span>
+        <span class="control inline">}</span><span class="control inline">,</span>
       </div>
       {{/author}}
 
       <div class="indentation-container">
-        <span class="attribute">"share_on"</span>
-        <span class="control inline">:</span>
+        <span class="attribute">"share_on"</span><span class="control inline">:</span>
         <span class="control inline">[</span>
         <div class="row indentation-content">
           <div class="indentation indentation-toggle">
@@ -169,15 +157,13 @@
           </div>
         </div>
         <span class="indentation-ellipsis indentation-toggle">...</span>
-        <span class="control inline">]</span>
-        <span class="control inline">,</span>
+        <span class="control inline">]</span><span class="control inline">,</span>
       </div>
 
     </div>
   </div>
   <span class="indentation-ellipsis indentation-toggle">...</span>
-  <span class="control inline">}</span>
-  <span class="control inline">,</span>
+  <span class="control inline">}</span><span class="control inline">,</span>
 </div>
 
 {{/post}}
