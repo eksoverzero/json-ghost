@@ -1,12 +1,12 @@
-# Casper
+# JSON
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/).
+![Index](https://github.com/secondimpression/json-ghost/raw/master/doc/images/index.jpg)
 
-To download, visit the [releases](https://github.com/TryGhost/Casper/releases) page.
+To download, visit the [releases](https://github.com/secondimpression/json-ghost/releases) page.
 
 ## Copyright & License
 
-Copyright (c) 2013-2014 Ghost Foundation - Released under the MIT License.
+Copyright (c) 2013-2015 secondimpression - Released under the MIT License.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
