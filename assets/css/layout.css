@@ -56,6 +56,10 @@ h6 {
   color: #ffffff;
 }
 
+div[class*=" col-"] {
+  padding-right: 0;
+}
+
 .container {
   padding-top: 20px;
   padding-bottom: 20px;
