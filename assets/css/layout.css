@@ -60,6 +60,11 @@ div[class*=" col-"] {
   padding-right: 0;
 }
 
+#pagination-top .pagination-next,
+#pagination-bottom .pagination-prev {
+  display: none;
+}
+
 .container {
   padding-top: 20px;
   padding-bottom: 20px;

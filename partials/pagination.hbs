@@ -1,0 +1,15 @@
+{{#if prev}}
+  <div class="pagination-prev">
+    <span class="control inline">{</span>
+    <a href="{{page_url prev}}" title="Newer posts">...</a>
+    <span class="control inline">}</span><span class="control inline">,</span>
+  </div>
+{{/if}}
+
+{{#if next}}
+  <div class="pagination-next">
+    <span class="control inline">{</span>
+    <a href="{{page_url next}}" title="Older posts">...</a>
+    <span class="control inline">}</span>
+  </div>
+{{/if}}
