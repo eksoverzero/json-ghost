@@ -8,6 +8,7 @@
     </div>
     <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 
+      {{#author}}
       <div class="array-item">
         <span class="attribute">"name"</span><span class="control inline">:</span>
         <span class="value">"<a href="{{@blog.url}}{{url}}rss/">{{name}}</a>"</span><span class="control inline">,</span>
@@ -40,6 +41,7 @@
         <span class="value">"<a href="{{website}}">{{website}}</a>"</span><span class="control inline">,</span>
       </div>
       {{/if}}
+      {{/author}}
 
       <div class="array-item indentation-container">
         <span class="attribute">"posts"</span><span class="control inline">:</span>
