@@ -36,6 +36,7 @@ pre {
   background-color: #333333;
   border: none;
   border-radius: 0;
+  word-wrap: normal;
 }
 
 code {
