@@ -46,6 +46,7 @@ code {
 pre code {
   font-size: 16px;
   color: #ffffff;
+  white-space: pre;
 }
 
 h1,

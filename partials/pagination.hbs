@@ -1,7 +1,7 @@
 {{#if prev}}
   <div class="pagination-prev">
     <span class="control inline">{</span>
-    <a href="{{page_url prev}}" title="Newer posts">...</a>
+    <a href="{{page_url prev}}" data-toggle="tooltip" data-placement="top" title="Newer posts">...</a>
     <span class="control inline">}</span><span class="control inline">,</span>
   </div>
 {{/if}}
@@ -9,7 +9,7 @@
 {{#if next}}
   <div class="pagination-next">
     <span class="control inline">{</span>
-    <a href="{{page_url next}}" title="Older posts">...</a>
+    <a href="{{page_url next}}" data-toggle="tooltip" data-placement="bottom" title="Older posts">...</a>
     <span class="control inline">}</span>
   </div>
 {{/if}}
